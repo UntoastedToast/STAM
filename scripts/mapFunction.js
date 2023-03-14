@@ -135,7 +135,7 @@ function addGrafittiToDatabase() {
     printData(graffitiSammlung.graffiti);
 
 
-    location.reload();
+    //location.reload();
 }
 
 function deleteTheNulls() {
@@ -153,6 +153,7 @@ function deleteTheNulls() {
     // Set up a callback function to handle the response
     xhr3.onreadystatechange = function () {
         if (xhr3.readyState === 4 && xhr3.status === 200) {
+            console.log(xhr3.responseText);
             var response = JSON.parse(xhr3.responseText);
             if (response.success) {
                 console.log('JSON file updated successfully');

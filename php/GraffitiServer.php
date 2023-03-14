@@ -3,7 +3,7 @@
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Read the existing JSON file and decode it into a PHP array
-  $json_file = file_get_contents('data/Grafittis.json');
+  $json_file = file_get_contents('../data/Grafittis.json');
   $data = json_decode($json_file, true);
 
   // Get the request payload and decode it into a PHP array
@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
   $updated_json = json_encode($data);
 
   // Write the updated JSON back to the file
-  file_put_contents('data/Grafittis.json', $updated_json);
+  file_put_contents('../data/Grafittis.json', $updated_json);
 
   // Send a success response
   http_response_code(200);

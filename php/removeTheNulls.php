@@ -1,7 +1,7 @@
 <?php
 
 // Read the JSON file and decode it into a PHP object
-$json = file_get_contents('data/Grafittis.json');
+$json = file_get_contents('../data/Grafittis.json');
 $obj = json_decode($json, true);
 
 // Check if the "graffiti" array exists and is not null
@@ -18,7 +18,7 @@ if (isset($obj['graffiti']) && $obj['graffiti'] !== null) {
   $json = json_encode($obj);
 
   // Write the updated JSON back to the file
-  file_put_contents('data/Grafittis.json', $json);
+  file_put_contents('../data/Grafittis.json', $json);
 
   // Send a success response
   echo json_encode(array('success' => true));
