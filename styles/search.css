@@ -3,9 +3,7 @@
   z-index: 98;
   display: flex;
   justify-content: center;
-  align-items: center;
   top: 20px;
-  width: 100%;
 }
 
 .search-bar {
@@ -13,7 +11,7 @@
   align-content: center;
   width: 100%;
   max-width: 900px;
-  background-color: #fff;
+  background-color: #424242;
   border-radius: 60px;
   padding: 10px 20px;
 }
@@ -24,7 +22,7 @@
   }
 }
 
-search-bar,
+.search-bar
 input {
   flex: 1;
   background: transparent;
@@ -32,11 +30,11 @@ input {
   outline: none;
   padding: 0 20px;
   font-size: 20px;
-  color: #cac7ff;
+  color: #848484;
 }
 
 ::placeholder {
-  color: #cac7ff;
+  color: #848484;
 }
 
 search-bar,
@@ -51,7 +49,7 @@ button {
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  background: #6f5aca;
+  background: #848484;
   cursor: pointer;
 }
 

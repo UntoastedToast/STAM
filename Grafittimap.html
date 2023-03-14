@@ -1,85 +1,113 @@
 <!DOCTYPE html>
 <html>
-    
-  <head>
-    <!--Loading Image mit Animation-->
-    <!--? <div><img src="Grafitti_Background.jpg" alt="STAM" width=100%></div>--> 
 
-    <meta charset="utf-8"> 
-    <link rel="stylesheet" type="text/css" href="mapLayout.css">
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <script src="mapFuntion.js" defer></script>
-    <!-- leaflet bibliothek-->  
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-   crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-   crossorigin></script>
-       <!-- um bilder abzuspeichern bibliothek--> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/dropzone.min.js"></script>
-       <!-- metadata from pics (gps) bibliothek--> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>  
-    <script>
-      // Initialisieren von Dropzone.js
-      Dropzone.options.myDropzone = {
-        url: "GraffitiServer.php",
-        paramName: "file",
-        maxFilesize: 2, // Maximale Dateigröße in MB
-        maxFiles: 10, // Maximale Anzahl an Dateien
-        acceptedFiles: "image/*", // Nur Bilddateien erlauben
-        dictDefaultMessage: "Ziehen Sie hier Dateien zum Hochladen oder klicken Sie hier",
-        dictFallbackMessage: "Ihr Browser unterstützt das Hochladen per Drag & Drop nicht",
-        dictInvalidFileType: "Nur Bilddateien sind erlaubt",
-        dictFileTooBig: "Die Datei ist zu groß (max. {{maxFilesize}} MB)",
-        dictMaxFilesExceeded: "Es können maximal {{maxFiles}} Dateien hochgeladen werden",
-        dictResponseError: "Server hat einen Fehler zurückgegeben ({{statusCode}})",
-        dictCancelUpload: "Hochladen abbrechen",
-        dictCancelUploadConfirmation: "Sind Sie sicher, dass Sie den Upload abbrechen möchten?",
-        dictRemoveFile: "Datei entfernen",
-        dictRemoveFileConfirmation: null, // Keine Bestätigung erforderlich
-        headers: {
-          "My-Custom-Header": "HeaderValue"
-        },
-        params: {
-          "My-Param": "ParamValue"
-        },
-        thumbnailWidth: 120,
-        thumbnailHeight: 120,
-        init: function() {
-          this.on("success", function(file, response) {
-            console.log(response);
-          });
-        }
-      };
-    </script>
+<head>
+  <!--Loading Image mit Animation-->
+  <!--? <div><img src="Grafitti_Background.jpg" alt="STAM" width=100%></div>-->
 
-  </head>
+  <meta charset="utf-8">
 
-    <body>
-       
-        <div id="searchIT" class="container">
-           <form action="" class="search-bar">
-            <input type="seach" id="search" placeholder="   Search artist or crew here" >
-            <button type="submit" onclick="searchArtist()"><img src="search.png"></button>
-           </form>
-         </div>
-     
-       <div id="map"></div>
-        
-         
+  <!-- Style -->
+  <link rel="stylesheet" type="text/css" href="styles/app.css">
+  <link rel="stylesheet" href="styles/loader.css">
+  <link rel="stylesheet" href="styles/search.css">
+  <link rel="stylesheet" href="styles/map.css">
+  <link rel="stylesheet" href="styles/nav.css">
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 
-         <!--Search Bar, fährt beim anklick nach unten bis zur 1/3 des Bildschirms--> 
-  
-          <!-- icon links unten-->
-        <div>
-          <img id="logo" src="ex_icon.png" alt="STAM" height="200px">
-        </div>
-  
-        <button id="add" onclick="addForm()">+</button>
-        
-        <!--öffnet erst nach + button--> 
-       <!--
+  <!-- Scripts -->
+  <script src="scripts/mapFunction.js" defer></script>
+  <script src="scripts/ui.js" defer></script>
+
+  <!-- leaflet Bibliothek-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin></script>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/c99cea887b.js" crossorigin="anonymous"></script>
+
+  <!-- Um Bilder abzuspeichern Bibliothek-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/dropzone.min.js"></script>
+
+  <!-- Metadata from pics (gps) Bibliothek-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
+
+  <script>
+    // Initialisieren von Dropzone.js
+    Dropzone.options.myDropzone = {
+      url: "GraffitiServer.php",
+      paramName: "file",
+      maxFilesize: 2, // Maximale Dateigröße in MB
+      maxFiles: 10, // Maximale Anzahl an Dateien
+      acceptedFiles: "image/*", // Nur Bilddateien erlauben
+      dictDefaultMessage: "Ziehen Sie hier Dateien zum Hochladen oder klicken Sie hier",
+      dictFallbackMessage: "Ihr Browser unterstützt das Hochladen per Drag & Drop nicht",
+      dictInvalidFileType: "Nur Bilddateien sind erlaubt",
+      dictFileTooBig: "Die Datei ist zu groß (max. {{maxFilesize}} MB)",
+      dictMaxFilesExceeded: "Es können maximal {{maxFiles}} Dateien hochgeladen werden",
+      dictResponseError: "Server hat einen Fehler zurückgegeben ({{statusCode}})",
+      dictCancelUpload: "Hochladen abbrechen",
+      dictCancelUploadConfirmation: "Sind Sie sicher, dass Sie den Upload abbrechen möchten?",
+      dictRemoveFile: "Datei entfernen",
+      dictRemoveFileConfirmation: null, // Keine Bestätigung erforderlich
+      headers: {
+        "My-Custom-Header": "HeaderValue"
+      },
+      params: {
+        "My-Param": "ParamValue"
+      },
+      thumbnailWidth: 120,
+      thumbnailHeight: 120,
+      init: function () {
+        this.on("success", function (file, response) {
+          console.log(response);
+        });
+      }
+    };
+  </script>
+
+</head>
+
+<body>
+
+  <div class="loader">
+    <img src="ressources/loader/loader.webp" alt="Wuerfel Loading Animation">
+  </div>
+
+  <div class="search-container">
+    <form action="" class="search-bar"><input type="search" id="search" name="q"
+        placeholder="Search for artist or crew...">
+      <button type="submit" onclick="searchArtist()"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+
+  <!--   <div id="searchIT" class="container">
+    <form action="" class="search-bar">
+      <input type="seach" id="search" placeholder="   Search artist or crew here">
+      <button type="submit" onclick="searchArtist()"><img src="ressources/icons/search.png"></button>
+    </form>
+  </div> -->
+
+  <div id="map"></div>
+
+
+
+  <!--Search Bar, fährt beim anklick nach unten bis zur 1/3 des Bildschirms-->
+
+  <!-- icon links unten-->
+  <div>
+    <img id="logo" src="ressources/icons/ex_icon.png" alt="STAM" height="200px">
+  </div>
+
+  <button id="add" onclick="addForm()"><i class="fa fa-plus"></i></button>
+
+
+  <!--öffnet erst nach + button-->
+  <!--
          <form id="form">
           
             <label for="lettering">Lettering</label>
@@ -130,37 +158,46 @@
          </form> //
         -->
 
-  
-         <!-- info öffnen sich beim draufklicken zu full screen-->
-<ul>
-  <li>
-    <a href="https://de.wikipedia.org/wiki/Graffiti">
-      <div class="icon">
-        <i class="fa fa-info-circle" aria-hidden="true"></i>
-      </div>
-      <div class="name" data-text="Infos">Infos</div>
-    </a>
-  </li>
-  <li>
-    <a href="https://www.graffiti-wiki.com/hip-hop/graffiti-styles/">
-      <div class="icon">
-        <i class="fa fa-paint-brush" aria-hidden="true"></i>
-      </div>
-      <div class="name" data-text="Styles">Styles</div>
-    </a>
-  </li>
-  <li>
-    <a href="https://de.wikipedia.org/wiki/Rating">
-      <div class="icon">
-        <i class="fa fa-star" aria-hidden="true"></i>
-      </div>
-      <div class="name" data-text="Rating">Ratings</div>
-    </a>
-  </li>
-</ul>
-      
 
-        
-    </body>
-    
+  <!-- info öffnen sich beim draufklicken zu full screen-->
+
+  <nav class="nav-container">
+    <ul>
+      <li><a href="https://de.wikipedia.org/wiki/Graffiti"><i class="fa fa-info-circle"></i>Infos</a></li>
+      <li><a href="https://www.graffiti-wiki.com/hip-hop/graffiti-styles/"><i class="fa fa-paint-brush"></i>Styles</a></li>
+      <li><a href="https://de.wikipedia.org/wiki/Rating"><i class="fa fa-star"></i>Rating</a></li>
+    </ul>
+  </nav>
+
+  <!--  <ul>
+      <li>
+        <a href="https://de.wikipedia.org/wiki/Graffiti">
+          <div class="icon">
+            <i class="fa fa-info-circle" aria-hidden="true"></i>
+          </div>
+          <div class="name" data-text="Infos">Infos</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.graffiti-wiki.com/hip-hop/graffiti-styles/">
+          <div class="icon">
+            <i class="fa fa-paint-brush" aria-hidden="true"></i>
+          </div>
+          <div class="name" data-text="Styles">Styles</div>
+        </a>
+      </li>
+      <li>
+        <a href="https://de.wikipedia.org/wiki/Rating">
+          <div class="icon">
+            <i class="fa fa-star" aria-hidden="true"></i>
+          </div>
+          <div class="name" data-text="Rating">Ratings</div>
+        </a>
+      </li>
+    </ul> -->
+
+
+
+</body>
+
 </html>

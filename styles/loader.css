@@ -1,0 +1,38 @@
+/* ---------------------
+        Loader
+--------------------- */
+
+.loader {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #161618;
+}
+
+.loader img {
+    max-width: 420px;
+}
+
+@media only screen and (max-width: 600px) {
+    .loader img {
+        max-width: 220px;
+    }
+}
+
+.ausblenden {
+    animation: fadeout 1s forwards;
+}
+
+@keyframes fadeout {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}

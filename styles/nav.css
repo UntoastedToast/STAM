@@ -6,7 +6,7 @@ nav {
   right: 0;
   max-width: 868px;
   margin: 0 auto;
-  background-color: white;
+  background-color: #424242;
   border-radius: 10px 10px 0 0;
   -webkit-border-radius: 10px 10px 0 0;
   -moz-border-radius: 10px 10px 0 0;
@@ -14,17 +14,53 @@ nav {
   -o-border-radius: 10px 10px 0 0;
   padding-top: 2em;
   padding-bottom: 2em;
+
+  /* Temporäre Font */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 nav ul {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  color: #fff !important;
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
+  display: inline-block;
+}
+
+nav a {
+  padding: 10px;
+  font-size: 20px;
 }
 
 nav li {
+  color: #fff !important;
   display: inline-block;
   margin: 0 10px;
+}
+
+nav li a i {
+  padding-right: 5px;
+}
+
+nav /* unvisited link */
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+}
+
+/* mouse over link */
+a:hover {
+  color: blueviolet;
+}
+
+/* selected link */
+a:active {
+  color: blue;
 }
