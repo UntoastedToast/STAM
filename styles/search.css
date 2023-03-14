@@ -37,13 +37,13 @@ input {
   color: #848484;
 }
 
-search-bar,
-button,
+.search-bar
+button
 i {
   width: 25px;
 }
 
-search-bar,
+.search-bar
 button {
   border: 0;
   border-radius: 50%;

@@ -16,14 +16,7 @@ header {
     font-size: 30px;
 }
 
-.container {
-    width: 90%;
-    height: 10vh;
-    padding: 2vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 
 /* .search-bar{
     width: 90%;
@@ -71,6 +64,12 @@ header {
     #logo {
         height: 4rem;
         bottom: 100px;
+    }
+    #add {
+        margin-bottom: 100px;
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
     }
 }
 
