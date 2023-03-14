@@ -112,7 +112,7 @@ function addGrafittiToDatabase() {
 
             // Send an XHR request to the server to add the new object
             var xhr2 = new XMLHttpRequest();
-            xhr2.open("POST", "php/GraffitiServer.php", false);
+            xhr2.open("POST", "/php/GraffitiServer.php", false);
             xhr2.setRequestHeader("Content-Type", "application/json");
             xhr2.onreadystatechange = function () {
                 if (xhr2.readyState === XMLHttpRequest.DONE) {
@@ -127,7 +127,7 @@ function addGrafittiToDatabase() {
         }
     };
     console.log("hallo4");
-    xhr.open("POST", "php/BildAbspeichern.php", false);
+    xhr.open("POST", "/php/BildAbspeichern.php", false);
     console.log("hallo5");
     xhr.send(formData);
 
@@ -142,7 +142,7 @@ function deleteTheNulls() {
     // Create a new XMLHttpRequest object
     var xhr3 = new XMLHttpRequest();
     // Set up the request method and URL
-    xhr3.open('POST', 'php/removeTheNulls.php');
+    xhr3.open('POST', '/php/removeTheNulls.php');
 
     // Set the content type of the request to JSON
     xhr3.setRequestHeader('Content-Type', 'application/json');
@@ -208,7 +208,7 @@ function addForm() {
         var div = document.createElement('div');
         div.id = "submitForm";
         div.innerHTML =
-            "<form id='form' enctype='multipart/form-data' method='POST' action='php/GraffitiServer.php'><label for='file'>Upload Picture</label><input type='file' name='file' id='GraffitiPic'><br><br><label for='lettering'>Lettering</label><input type='text' name='lettering'><br><br><label for='artist'>Artist/Crew</label><input type='text' name='artist'><br><br><label for='year'>Made in the Year:</label><select id='year' name='year'><option value='unknown'>Unknown</option><option value=2013>2013</option><option value=2014>2014</option><option value=2015>2015</option><option value=2016>2016</option><option value=2017>2017</option><option value=2018>2018</option><option value=2019>2019</option><option value=2020>2020</option><option value=2021>2021</option><option value=2022>2022</option><option value=2023>2023</option></select><br><br><label for='motiv'>Motiv</label><input type='text' name='motiv'><br><br><label for='comment'>Comment</label><input type='text' name='comment'><br><br><div><h1>Style</h1><input type='radio' class='form-check-input' id='bubble' name='styleRadio' value='bubble'><label class='form-check-style' for='check1'>Bubble Style</label><input type='radio' class='form-check-input' id='throughup' name='styleRadio' value='throughup'><label class='form-check-style' for='check2'>Through Up</label><input type='radio' class='form-check-input' id='blockbuster' name='styleRadio' value='blockbuster'><label class='form-check-style' for='check3'>Blockbuster</label><input type='radio' class='form-check-input' id='character' name='styleRadio' value='character'><label class='form-check-style' for='check4'>Characters</label><input type='radio' class='form-check-input' id='bw' name='styleRadio' value='bw'><label class='form-check-style' for='check5'>black and white</label><input type='radio' class='form-check-input' id='freewall' name='styleRadio' value='freewall'><label class='form-check-style' for='check6'>Freewall</label><input type='radio' class='form-check-input' id='official' name='styleRadio' value='official'><label class='form-check-style' for='check7'>Official Contest</label><input type='radio' class='form-check-input' id='somethingelse' name='styleRadio' value='somethingelse' checked><label class='form-check-style' for='check8'>Something else</label></div> <div><h1>Rating</h1><p>Skala</p></div><button type='submit' id='submit' onclick='createNewGraffiti()'>Hinzufügen</button></form>"
+            "<form id='form' enctype='multipart/form-data' method='POST' action='/php/GraffitiServer.php'><label for='file'>Upload Picture</label><input type='file' name='file' id='GraffitiPic'><br><br><label for='lettering'>Lettering</label><input type='text' name='lettering'><br><br><label for='artist'>Artist/Crew</label><input type='text' name='artist'><br><br><label for='year'>Made in the Year:</label><select id='year' name='year'><option value='unknown'>Unknown</option><option value=2013>2013</option><option value=2014>2014</option><option value=2015>2015</option><option value=2016>2016</option><option value=2017>2017</option><option value=2018>2018</option><option value=2019>2019</option><option value=2020>2020</option><option value=2021>2021</option><option value=2022>2022</option><option value=2023>2023</option></select><br><br><label for='motiv'>Motiv</label><input type='text' name='motiv'><br><br><label for='comment'>Comment</label><input type='text' name='comment'><br><br><div><h1>Style</h1><input type='radio' class='form-check-input' id='bubble' name='styleRadio' value='bubble'><label class='form-check-style' for='check1'>Bubble Style</label><input type='radio' class='form-check-input' id='throughup' name='styleRadio' value='throughup'><label class='form-check-style' for='check2'>Through Up</label><input type='radio' class='form-check-input' id='blockbuster' name='styleRadio' value='blockbuster'><label class='form-check-style' for='check3'>Blockbuster</label><input type='radio' class='form-check-input' id='character' name='styleRadio' value='character'><label class='form-check-style' for='check4'>Characters</label><input type='radio' class='form-check-input' id='bw' name='styleRadio' value='bw'><label class='form-check-style' for='check5'>black and white</label><input type='radio' class='form-check-input' id='freewall' name='styleRadio' value='freewall'><label class='form-check-style' for='check6'>Freewall</label><input type='radio' class='form-check-input' id='official' name='styleRadio' value='official'><label class='form-check-style' for='check7'>Official Contest</label><input type='radio' class='form-check-input' id='somethingelse' name='styleRadio' value='somethingelse' checked><label class='form-check-style' for='check8'>Something else</label></div> <div><h1>Rating</h1><p>Skala</p></div><button type='submit' id='submit' onclick='createNewGraffiti()'>Hinzufügen</button></form>"
             ;
         document.body.appendChild(div);
     } else {
