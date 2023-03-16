@@ -11,7 +11,6 @@
   align-content: center;
   width: 100%;
   max-width: 900px;
-  background-color: #424242;
   border-radius: 60px;
   padding: 10px 20px;
 }
@@ -30,11 +29,11 @@ input {
   outline: none;
   padding: 0 20px;
   font-size: 20px;
-  color: #848484;
+  color: #fff;
 }
 
 ::placeholder {
-  color: #848484;
+  color: #ffffff70;
 }
 
 .search-bar
@@ -49,7 +48,7 @@ button {
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  background: #848484;
+  background: #ffffffb0;
   cursor: pointer;
 }
 

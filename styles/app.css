@@ -16,42 +16,9 @@ header {
     font-size: 30px;
 }
 
-
-
-/* .search-bar{
-    width: 90%;
-    height: 60px;
-    display: flex;
-    background-color: #424242;
-    color: white;
-    align-items: center;
-    border-radius: 60px;
-    padding: 10px, 20px;
+.bg-color {
+    background-color: #312735 !important;
 }
-
-.search-bar input{
-    background: transparent;
-    flex: 1;
-    border: 0;
-    outline: none;
-    padding: 24px, 20px;
-    font-size: 40px;
-    color: white;
-}
-
-.search-bar button img{
-    width: 30px;
-}
-
-.search-bar button{
-    border: 0;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    background: #848484;
-    cursor: pointer;
-
-} */
 
 #logo {
     position: absolute;
@@ -129,44 +96,6 @@ h1 {
     text-align: right;
 }
 
-/* ul {
-    position: absolute;
-    bottom: 2%;
-    left: 1%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    font-size: 50px;
+:root {
+    --leaflet-tile-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
 }
-
-ul li {
-    list-style: none;
-    text-align: center;
-    display: block;
-}
-
-ul li a {
-    text-decoration: none;
-    padding: 0 90px;
-    display: block;
-}
-
-ul li a .icon {
-    width: 60px;
-    height: 60px;
-    text-align: center;
-    margin: 0 auto 10px;
-}
-
-ul li a .icon .fa {
-    width: 100%;
-    height: 100%;
-    line-height: 60px;
-    font-size: 50px;
-    color: white;
-}
-
-ul li a .name {
-    color: white;
-    font-family: Verdana;
-} */
