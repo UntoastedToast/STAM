@@ -27,8 +27,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-var marker = L.marker([50.9413, 6.9558]).addTo(map);
-
+var marker = L.marker([50.9413, 6.9558], {icon: sprayerIcon}).addTo(map);
 
 
 //create new Graffiti
@@ -173,7 +172,7 @@ function deleteTheNulls() {
 function printData(graffitiArray) {
 
     graffitiArray = graffitiArray.filter(element => element !== null);
-    //DELET ALL Layer
+    //DELETE ALL Layer
     map.eachLayer(function (layer) {
         if (layer instanceof L.Marker) {
             map.removeLayer(layer);
@@ -183,9 +182,20 @@ function printData(graffitiArray) {
     var graffitiLength = graffitiArray.length;
     var i;
     var markerGraffitiArray = [graffitiLength];
+
+    // Marker with custom icon
+    var sprayerIcon = L.icon({
+        iconUrl: '../ressources/icons/sprayer_marker.png',
+    
+        iconSize:     [25, 60], // size of the icon
+        iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+        popupAnchor:  [-3, -70] // point from which the popup should open relative to the iconAnchor
+    });
+
+
     for (i = 0; i < graffitiLength; i++) {
 
-        markerGraffitiArray[i] = L.marker([graffitiArray[i].longitude, graffitiArray[i].latitude]).addTo(map);
+        markerGraffitiArray[i] = L.marker([graffitiArray[i].longitude, graffitiArray[i].latitude], {icon: sprayerIcon}).addTo(map);
 
         // Create a popup with the feature properties
         var popupContent = "";
