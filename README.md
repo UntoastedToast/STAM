@@ -8,8 +8,8 @@ Not all functions of the website are available via this link, as PHP requests ca
 
 # Hey we are - STAM
 
-STAM is short for **ST**reet-**A**rt-**M**ap and that's what we want to introduce you to.
+STAM stands for **ST**street-**A**rt-**M**ap and that's what we're introducing you.
 
-We are a small group of students who share a passion for street art with a special focus on grafitis. As part of our studies of media cultural studies and media informatics at the university of cologne this project was born. Our goal is to understand our city as a museum and to appreciate the art that we encounter everywhere on the street.
+We are a small group of students who share a passion for street art with a special focus on graffiti. This project was born as part of our studies in Media Cultural Studies and Media Informatics at the University of Cologne. Our goal is to understand our city as a museum and to appreciate the art we encounter everywhere on the streets.
 
-We are a platform for everyone who is as passionate about streetart as we are and wants to share the art.
+We are a platform for everyone who is as passionate about street art as we are and wants to share this art with others.
