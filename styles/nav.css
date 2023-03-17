@@ -17,14 +17,11 @@ nav {
 }
 
 nav ul {
-  width: 80%;
   text-align: center;
-  margin: auto;
   color: #fff !important;
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 20px;
-  display: inline-block;
 }
 
 nav a {
@@ -36,6 +33,12 @@ nav li {
   color: #fff !important;
   display: inline-block;
   margin: 0 10px;
+}
+
+@media screen and (max-width: 600px) {
+  nav li {
+    margin: 0px !important;
+  }
 }
 
 nav li a i {
