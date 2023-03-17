@@ -1,6 +1,6 @@
 <?php
     // Process the file upload
-    $target_dir = "GraffitiBilder/";
+    $target_dir = "../GraffitiBilder/";
     $target_file = $target_dir . basename($_FILES["file"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

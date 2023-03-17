@@ -5,6 +5,14 @@ var markerGraffitiArray;
 var newGraffiti;
 var formData;
 
+var sprayerIcon = L.icon({
+        iconUrl: 'ressources/icons/sprayer_marker.png',
+    
+        iconSize:     [25, 60], // size of the icon
+        iconAnchor:   [15, 58], // point of the icon which will correspond to marker's location
+        popupAnchor:  [-3, -70] // point from which the popup should open relative to the iconAnchor
+    });
+
 deleteTheNulls();
 // GET DATA 
 var requestGraffiti = new XMLHttpRequest();
@@ -134,7 +142,7 @@ function addGrafittiToDatabase() {
     printData(graffitiSammlung.graffiti);
 
 
-    //location.reload();
+    location.reload();
 }
 
 function deleteTheNulls() {
@@ -184,13 +192,7 @@ function printData(graffitiArray) {
     var markerGraffitiArray = [graffitiLength];
 
     // Marker with custom icon
-    var sprayerIcon = L.icon({
-        iconUrl: '../ressources/icons/sprayer_marker.png',
     
-        iconSize:     [25, 60], // size of the icon
-        iconAnchor:   [15, 58], // point of the icon which will correspond to marker's location
-        popupAnchor:  [-3, -70] // point from which the popup should open relative to the iconAnchor
-    });
 
 
     for (i = 0; i < graffitiLength; i++) {
