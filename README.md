@@ -2,7 +2,7 @@
 
 Street Art Map of Cologne
 
-[](https://untoastedtoast.github.io/STAM/)
+[Our Website](https://untoastedtoast.github.io/STAM/)
 
 
 
