@@ -21,16 +21,15 @@ header {
 
 #logo {
     position: absolute;
-    bottom: 10px;
+    bottom: 0;
     left: 20px;
-    height: 5rem;
-    width: 9rem;
+    height: 150px;
 }
 
 @media only screen and (max-width: 1000px) {
     #logo {
-        height: 4rem;
-        bottom: 100px;
+        height: 100px;
+        bottom: 60px;
     }
     #add {
         margin-bottom: 100px;

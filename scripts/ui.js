@@ -6,5 +6,5 @@ function hide() {
     setTimeout(
         function () {
             loader.classList.add("ausblenden")
-        }, 1000);
+        }, 2000);
 }
