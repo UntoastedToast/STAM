@@ -2,7 +2,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #161618;
-    text-align: center;
     color: white;
 }
 
@@ -25,6 +24,7 @@ header {
     bottom: 10px;
     left: 20px;
     height: 5rem;
+    width: 9rem;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -39,7 +39,7 @@ header {
         font-size: 20px;
     }
 }
-
+/* add-Button*/
 #add {
     z-index: 99;
     background-color: #424242;
@@ -64,6 +64,7 @@ header {
     }
 }
 
+/*Formular*/
 #submitForm {
     overflow-y: auto;
     z-index: 999;
@@ -74,8 +75,8 @@ header {
     max-width: 864px;
     height: 600px;
     padding: 20px;
-    background-color: #fff;
-    color: #161618;
+    background-color: #312735;
+    color: white;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -85,17 +86,69 @@ header {
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+@media only screen and (min-width: 1110px) {
+    #submitForm {
+        width: 600px;
+        
+    }
+}
 
 h1 {
-    font-size: 40px;
-}
-
-#submit {
-    text-align: right;
+    font-size: 20px;
 }
 
 :root {
     --leaflet-tile-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+}
+
+/*labels und input fields*/
+label{
+    display: block;
+    margin-top: 1em;
+}
+label:first-of-type{
+    margin-top: 0;
+}
+
+input{
+    width: 20em;
+    
+}
+textarea{
+    min-height: 5em;
+    min-width: 70%;
+
+}
+
+/*Style radio Buttons*/
+input[type="radio"]+label{
+    display: inline-block;
+    padding-top: 0;
+    margin-top: 0;
+    margin-right: 3em;
+    margin-left: -7em;
+}
+
+input[type="radio"]{
+    margin-left: -10em;
+}
+
+/*submit button*/
+
+#submit{
+    position:absolute;
+    
+    right: 20px;
+    padding: 7px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: lightgrey;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+
 }

@@ -1,0 +1,14 @@
+div{
+    background-color:  #312735;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 600px;
+    text-align: center;
+    margin-left: 20%;
+    padding: 5px;
+}
+body{
+    background-image:url("ressources/Grafitti.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
