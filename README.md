@@ -3,7 +3,7 @@
 Street Art Map of Cologne
 
 [Our Website](https://untoastedtoast.github.io/STAM/)
-
+Not all functions of the website are available via this link, as PHP requests cannot be executed via GitHub pages.
 
 
 # Hey we are - STAM
